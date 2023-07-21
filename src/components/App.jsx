@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 
 import { Routes, Route, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import s from './App.module.css';
+import css from './App.module.css';
 import { NotFound } from './NotFound/NotFound';
 
 const Home = lazy(() => import('./Home/Home'));
@@ -28,7 +28,7 @@ export const App = () => {
 
   return (
     <>
-      <nav className={s.navigation}>
+      <nav className={css.navigation}>
         <StyledLink to="/" end>
           Home
         </StyledLink>

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieReviews } from '../../API/API';
-import s from './Reviews.module.css';
+import css from './Reviews.module.css';
 
 const Reviews = () => {
   const [data, setData] = useState(null);
@@ -30,18 +30,18 @@ const Reviews = () => {
       {loading ? (
         'Loading...'
       ) : data && data.length > 0 ? (
-        <div className={s.listWrap}>
-          <ul className={s.list}>
+        <div className={css.listWrap}>
+          <ul className={css.list}>
             {data.map(({ author, content, id }) => (
-              <li key={id} className={s.listItem}>
-                <p className={s.listName}>{author}</p>
+              <li key={id} className={css.listItem}>
+                <p className={css.listName}>{author}</p>
                 {content && content}
               </li>
             ))}
           </ul>
         </div>
       ) : (
-        <p className={s.error}>No reviews found</p>
+        <p className={css.error}>No reviews found</p>
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovie } from '../../API/API';
-import s from './Movie.module.css';
+import css from './Movie.module.css';
 
 const Movies = () => {
   const [data, setData] = useState(null);
@@ -43,30 +43,30 @@ const Movies = () => {
 
   return (
     <>
-      <div className={s.wrap}>
-        <h2 className={s.title}>Search movies:</h2>
+      <div className={css.wrap}>
+        <h2 className={css.title}>Search movies:</h2>
 
-        <form onSubmit={handleSubmit} className={s.movieForm}>
+        <form onSubmit={handleSubmit} className={css.movieForm}>
           <input
             value={query}
             onChange={handleChange}
             name="search"
             type="text"
             placeholder="Type here"
-            className={s.movieInput}
+            className={css.movieInput}
           />
-          <button type="submit" className={s.btn}>
+          <button type="submit" className={css.btn}>
             Search
           </button>
         </form>
       </div>
-      <ul className={s.list}>
+      <ul className={css.list}>
         {searchQuery ? (
           loading ? (
             'Loading...'
           ) : data.length > 0 ? (
             data.map(({ title, id }) => (
-              <li key={id} className={s.listItem}>
+              <li key={id} className={css.listItem}>
                 <Link state={{ from: location }} to={`/movies/${id}`}>
                   {title}
                 </Link>
@@ -78,7 +78,7 @@ const Movies = () => {
             </p>
           )
         ) : (
-          <p className={s.descr}></p>
+          <p className={css.descr}></p>
         )}
       </ul>
     </>

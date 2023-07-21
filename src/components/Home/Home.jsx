@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ListMovies, MovieItem } from './Home.styled';
 import { getTrendingMovies } from '../../API/API';
-import s from './Home.module.css';
+import css from './Home.module.css';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <ListMovies>
-        <h2 className={s.title}>Trending movies:</h2>
+        <h2 className={css.title}>Trending movies:</h2>
         {loading
           ? 'Loading...'
           : data.map(({ title, id }) => (
@@ -35,7 +35,7 @@ const Home = () => {
                 <Link
                   to={`/movies/${id}`}
                   state={{ from: location }}
-                  className={s.movieItem}
+                  className={css.movieItem}
                 >
                   {title}
                 </Link>

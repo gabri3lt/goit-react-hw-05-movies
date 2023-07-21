@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieCast } from '../../API/API';
-import s from './Cast.module.css';
+import css from './Cast.module.css';
 import PropTypes from 'prop-types';
 
 import userImg from '../../img/user.jpg';
@@ -33,28 +33,28 @@ const Cast = () => {
       {loading ? (
         'Loading...'
       ) : data && data.length > 0 ? (
-        <div className={s.listWrap}>
-          <ul className={s.list}>
+        <div className={css.listWrap}>
+          <ul className={css.list}>
             {data.map(({ name, character, profile_path, id }) => (
-              <li key={id} className={s.listItem}>
+              <li key={id} className={css.listItem}>
                 {profile_path ? (
                   <img
-                    className={s.listImg}
+                    className={css.listImg}
                     alt={name}
                     src={`https://image.tmdb.org/t/p/w92${profile_path}`}
                   />
                 ) : (
-                  <img className={s.listImg} alt={name} src={userImg} />
+                  <img className={css.listImg} alt={name} src={userImg} />
                 )}
 
-                <p className={s.listName}>{name}</p>
-                <p className={s.listCharacter}>{character}</p>
+                <p className={css.listName}>{name}</p>
+                <p className={css.listCharacter}>{character}</p>
               </li>
             ))}
           </ul>
         </div>
       ) : (
-        <p className={s.error}>No data found</p>
+        <p className={css.error}>No data found</p>
       )}
     </>
   );
