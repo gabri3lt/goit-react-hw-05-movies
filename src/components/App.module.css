@@ -1,0 +1,24 @@
+.navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: rgb(58, 180, 81);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 180, 81, 1) 19%,
+    rgba(239, 253, 29, 1) 50%,
+    rgba(241, 142, 3, 1) 100%
+  );
+}
+
+.navigation::before {
+  content: '';
+  background-image: url(./SVG/movie.svg);
+  background-size: cover;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 100px;
+}
